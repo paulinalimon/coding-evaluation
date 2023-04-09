@@ -1,14 +1,16 @@
 package com.aa.act.interview.org;
 
+import java.util.Random;
+
 public class Employee {
 
 	private int identifier;
 	private Name name;
-
-	public Employee(int identifier, Name name) {
+	
+	public Employee(Name name) { //Change: randomly creates a 6-digit identifier
 		if(name == null)
 			throw new IllegalArgumentException("name cannot be null");
-		this.identifier = identifier;
+		this.identifier = new Random().nextInt(900000) + 100000;
 		this.name = name;
 	}
 	
